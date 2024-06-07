@@ -4,15 +4,18 @@ import AddBooks from './components/AddBooks';
 import SearchBook from './components/SearchBook';
 import DeleteBook from './components/DeleteBook';
 import ViewBook from './components/ViewBook';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <div >
-      <AddBooks/>
-      <SearchBook/>
-      <DeleteBook/>
-      <ViewBook/>
-    </div>
+    <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<AddBooks/>}/>
+      <Route path='/s' element={<SearchBook/>}/>
+      <Route path='/d' element={<DeleteBook/>}/>
+      <Route path='/v' element={<ViewBook/>}/>
+    </Routes>
+    </BrowserRouter>
   );
 }
 
